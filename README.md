@@ -35,7 +35,7 @@
         ```
        > **_NOTE:_**  Your IP address will be different than mine, so make sure you use the one that you copied from the DigitalOcean Droplets panel..
    * If the login is successful, you should see some output similar to this as part of Ubuntu's Message of the Day:  
-       ![Welcome](essentialprogramming-api/src/main/resources/img/dokku_welcome.png)
+       ![Welcome](img/dokku_welcome.png)
        > **_NOTE:_**  You may find that your SSH connection will drop with the message "Please wait while we get your droplet ready...".  
        If that's the case, your Droplet may still be performing some initialization steps, even though the Droplets panel said it was ready. Just try again in a few minutes.
    * As instructed in the terminal, in order to complete the setup we need to access the Dokku setup page. Open a web browser and access your server using the ```http://<ip address>:```  
