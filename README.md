@@ -2,16 +2,16 @@
 1. ##### Setting up DigitalOcean droplet  
    * Log in into Digital Ocean Account  
    * Choose the desired project where you want your droplet to reside from left hand side menu. In our example we chose to create our droplet in ***Razvan*** project. 
-   ![ProjectTree](essentialprogramming-api/src/main/resources/img/newtree.png)
+   ![ProjectTree](img/newtree.png)
    * After the desired Project is selected, create a new droplet by clicking the ```Create``` green button and after that select Droplet item from the list.  
    Like in the example below :   
-    ![Create](essentialprogramming-api/src/main/resources/img/createDroplet.png)
+    ![Create](img/createDroplet.png)
    * After clicking Droplet item from list choose Marketplace and search for ***dokku*** keyword in the *Search keyword* text box.  
      Like in the example below :  
    ![Marketplace](essentialprogramming-api/src/main/resources/img/Marketplace.png)  
    * After choosing the Dokku 0.21.4 on Ubuntu 20.04 *(newest version at the time of writing)* you will need to choose a plan.  
    Choose the plan like in the below example if you are planning to use this droplet only for testing purposes.
-    ![Marketplace](essentialprogramming-api/src/main/resources/img/plan.png)  
+    ![Marketplace](img/plan.png)  
    * The next thing you'll be asked when you scroll down is what region you want your droplet to be in.  
    Select any region that makes sense for you. We chose ```Frankfurt``` datacenter as it is closer to our location.
    * Leave the *Select additional options* checkboxes unchecked.  
@@ -27,7 +27,7 @@
    * Once the Droplet has been created, it will have an IP address.  
     Copy the IP address into your clipboard, and open a terminal.  
     We're going to use SSH to connect to our Droplet.
-    ![Marketplace](essentialprogramming-api/src/main/resources/img/ip.png)  
+    ![Marketplace](img/ip.png)  
     
    * Write inside the terminal the following line: 
        ```
@@ -40,7 +40,7 @@
        If that's the case, your Droplet may still be performing some initialization steps, even though the Droplets panel said it was ready. Just try again in a few minutes.
    * As instructed in the terminal, in order to complete the setup we need to access the Dokku setup page. Open a web browser and access your server using the ```http://<ip address>:```  
    
-       ![DokkuSetup](essentialprogramming-api/src/main/resources/img/dokkuSetup.png)  
+       ![DokkuSetup](dokkuSetup.png)  
         
        Here you are asked to provide your SSH key. Since we have already provided it in a previous step when we initially set up the droplet, this should be pre-filled.  
        If you are using this for testing puropse only don't check the ***Use virtualhost naming for apps*** - this can be changed afterwards  
@@ -53,7 +53,7 @@
     * Clone this repository via 
      ```git clone https://github.com/essentialprogramming/micro-reference-project-dokku.git``` command
     * By executing the following git command ```git remote -v ``` you should get the following output :  
-      ![DokkuSetup](essentialprogramming-api/src/main/resources/img/remotev.png)  
+      ![DokkuSetup](img/remotev.png)  
     * The last thing we need to do is add a Git remote that points to our Dokku instance.  
     Since Dokku uses Git to deploy applications, every change you make that you want to deploy to the server must exist in Git at some stage.  
     You can do this with the following command in the terminal :  
