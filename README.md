@@ -8,7 +8,7 @@
     ![Create](img/createDroplet.png)
    * After clicking Droplet item from list choose Marketplace and search for ***dokku*** keyword in the *Search keyword* text box.  
      Like in the example below :  
-   ![Marketplace](essentialprogramming-api/src/main/resources/img/Marketplace.png)  
+   ![Marketplace](Marketplace.png)  
    * After choosing the Dokku 0.21.4 on Ubuntu 20.04 *(newest version at the time of writing)* you will need to choose a plan.  
    Choose the plan like in the below example if you are planning to use this droplet only for testing purposes.
     ![Marketplace](img/plan.png)  
