@@ -8,7 +8,7 @@
     ![Create](img/createDroplet.png)
    * After clicking Droplet item from list choose Marketplace and search for ***dokku*** keyword in the *Search keyword* text box.  
      Like in the example below :  
-   ![Marketplace](Marketplace.png)  
+   ![Marketplace](img/Marketplace.png)  
    * After choosing the Dokku 0.21.4 on Ubuntu 20.04 *(newest version at the time of writing)* you will need to choose a plan.  
    Choose the plan like in the below example if you are planning to use this droplet only for testing purposes.
     ![Marketplace](img/plan.png)  
@@ -40,7 +40,7 @@
        If that's the case, your Droplet may still be performing some initialization steps, even though the Droplets panel said it was ready. Just try again in a few minutes.
    * As instructed in the terminal, in order to complete the setup we need to access the Dokku setup page. Open a web browser and access your server using the ```http://<ip address>:```  
    
-       ![DokkuSetup](dokkuSetup.png)  
+       ![DokkuSetup](img/dokkuSetup.png)  
         
        Here you are asked to provide your SSH key. Since we have already provided it in a previous step when we initially set up the droplet, this should be pre-filled.  
        If you are using this for testing puropse only don't check the ***Use virtualhost naming for apps*** - this can be changed afterwards  
