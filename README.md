@@ -49,7 +49,44 @@
         * If you do not have a domain that you wish to use for your Dokku server, then you should leave this box unchecked. This will mean that your apps would become available on a specific port number, e.g. http://46.101.88.57:3000. You will need to configure the firewall to open specific application ports.
     * Now you can click "Finish Setup" to proceed. Your Dokku server is now ready!
    
-3. ##### Deploying 
+
+3. ##### Database plugin
+   * You will need to link your app to a database plugin inside the Droplet.
+   * First, download the correct plugin for your database, for example, in our case for PostgreSQL it will be:
+   
+     ```dokku plugin:install https://github.com/dokku/dokku-postgres.git postgres```
+   * Next, we need to create a Postgres instance for our app:
+
+     ```dokku postgres:create my-app-postgres```
+   * Finally, we need to link our newly created Postgres instance with our app using the following command:
+   
+     ```dokku postgres:link my-app-postgres my-app```
+   
+        If you do not have an app, you can create one using the following command:
+     ``` dokku apps:create my-app```
+     * For other databases, access the following link to see the available plugins:
+       https://github.com/topics/dokku-plugin
+   
+     The commands are the same, you just need to change the database name,
+    
+     for example instead of ```dokku postgres:create name-of-my-db```
+   
+     you will have ```dokku mongo:create name-of-my-db```
+
+4. ##### Deploying 
+    * First, we need to configure our Dockerfile in the project's root folder.
+    * For our Java project, we should have the following basic instructions for our Docker:
+   
+      ```FROM openjdk:8-jre```, this will tell the Docker what JDK to use for our project.
+    
+      ```COPY project.jar /app/```, this will copy our project's JAR from our local project to the Docker,
+      the first argument is the path to our file is the location of it, the root directory being the one where our Dockerfile is, and the second one is the destination directory.
+      Make sure that the file you want to copy is not marked to be ignored by Git! (In .gitignore)
+   
+      ```EXPOSE 8080```, this will expose the port where our project will be available on.
+   
+      ```CMD java -jar ./app/project.jar```, this will run our jar file from the directory where we copied it to.
+    
     * Clone this repository via 
      ```git clone https://github.com/essentialprogramming/micro-reference-project-dokku.git``` command
     * By executing the following git command ```git remote -v ``` you should get the following output :  
@@ -88,7 +125,7 @@
       ```
       
     * Now you can access your web app from outside world by accessing from the browser the following url ```http://<your IP address>:PORT```  
-4. #### Useful commands  
+6. #### Useful commands  
     * Dokku specific commands :  
         * ```dokku apps:list``` - lists all the apps deployed with dokku on the environment
         * ```dokku enter [app_name]``` - enter running app container
