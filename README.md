@@ -50,8 +50,8 @@
     * Now you can click "Finish Setup" to proceed. Your Dokku server is now ready!
    
 
-3. ##### Database plugin
-   * You will need to link your app to a database plugin inside the Droplet.
+3. ##### *OPTIONAL - Database plugin
+   * If you do not have a database on the cloud, and want to have a local one in your droplet then you will need a database plugin.
    * First, download the correct plugin for your database, for example, in our case for PostgreSQL it will be:
    
      ```dokku plugin:install https://github.com/dokku/dokku-postgres.git postgres```
